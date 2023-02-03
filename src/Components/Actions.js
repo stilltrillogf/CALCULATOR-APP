@@ -1,16 +1,31 @@
-function Action({ ActionType }) {
-  return <div className={`Action Action__${ActionType}`}>{ActionType}</div>;
+function Action({ type, tag = type }) {
+  return <div className={`Action Action__${type}`}>{tag}</div>;
 }
 
-export function ActionsHorizontal() {
+function ActionsHorizontal() {
   return (
     <div className="ActionsHorizontal">
-      <Action ActionType="AC" />
-      <Action ActionType="/" />
-      <Action ActionType="*" />
+      <Action type="AC" />
+      <Action type="Division" tag="/" />
+      <Action type="Multiplication" tag="*" />
     </div>
   );
 }
-export function ActionsVertical() {
-  return <div className="ActionsVertical">ActionsVertical</div>;
+function ActionsVertical() {
+  return (
+    <div className="ActionsVertical">
+      <Action type="Subtraction" tag="-" />
+      <Action type="Addition" tag="+" />
+      <Action type="Equals" tag="=" />
+    </div>
+  );
+}
+
+export default function Actions() {
+  return (
+    <>
+      <ActionsHorizontal />
+      <ActionsVertical />
+    </>
+  );
 }

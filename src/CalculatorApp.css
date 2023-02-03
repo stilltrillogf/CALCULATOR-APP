@@ -28,10 +28,14 @@
 
 /* Actions */
 .Action {
+  color: white;
+  background-color: rgb(152, 152, 152);
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
+  font-size: 30px;
 }
 
 .ActionsHorizontal {
@@ -42,6 +46,7 @@
 }
 .Action__AC {
   grid-area: AC;
+  background-color: red;
 }
 .Action__Division {
   grid-area: Division;
@@ -52,10 +57,30 @@
 
 .ActionsVertical {
   grid-area: ActionsVertical;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "Subtraction"
+    "Addition"
+    "Equals"
+    "Equals";
+}
+
+.Action__Subtraction {
+  grid-area: Subtraction;
+}
+.Action__Addition {
+  grid-area: Addition;
+}
+.Action__Equals {
+  grid-area: Equals;
+  background-color: blue;
 }
 
 /* Numpad */
 .Numpad {
+  background-color: rgb(99, 99, 99);
+  color: white;
   grid-area: Numpad;
   border: 1px solid black;
   display: grid;
@@ -68,11 +93,14 @@
     "Zero Zero Decimal";
 }
 
-.Numpad__Number {
+.Numpad__Key {
+  font-weight: 700;
   border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.Numpad__Number {
 }
 
 /* REFACTOR */
@@ -107,16 +135,8 @@
 
 .Numpad__Zero {
   grid-area: Zero;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .Numpad__Decimal {
   grid-area: Decimal;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
