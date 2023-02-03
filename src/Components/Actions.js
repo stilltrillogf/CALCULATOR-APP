@@ -1,5 +1,5 @@
 function Action({ type, tag = type }) {
-  return <div className={`Action Action__${type}`}>{tag}</div>;
+  return <div className={`Key Action Action__${type}`}>{tag}</div>;
 }
 
 function ActionsHorizontal() {

@@ -1,17 +1,17 @@
 function Number({ value }) {
   return (
-    <div className={`Numpad__Key Numpad__Number Numpad__Number__${value}`}>
+    <div className={`Key Numpad__Key Numpad__Number Numpad__Number__${value}`}>
       {value}
     </div>
   );
 }
 
 function Zero() {
-  return <div className="Numpad__Key Numpad__Zero">0</div>;
+  return <div className="Key Numpad__Key Numpad__Zero">0</div>;
 }
 
 function Decimal() {
-  return <div className="Numpad__Key Numpad__Decimal">.</div>;
+  return <div className="Key Numpad__Key Numpad__Decimal">.</div>;
 }
 
 export default function Numpad() {

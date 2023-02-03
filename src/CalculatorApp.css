@@ -111,6 +111,7 @@
 
 .Numpad__Key {
   font-weight: 700;
+  font-size: 25px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -155,4 +156,11 @@
 
 .Numpad__Decimal {
   grid-area: Decimal;
+}
+
+/* Hover on all keys */
+
+.Key:hover {
+  color: black;
+  border: 1px solid lightgrey;
 }
