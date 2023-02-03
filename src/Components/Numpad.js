@@ -1,6 +1,5 @@
 function Number({ value }) {
   return (
-    // TODO: add dynamic class with value
     <div className={`Numpad__Number Numpad__Number__${value}`}>{value}</div>
   );
 }

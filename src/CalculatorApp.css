@@ -3,6 +3,7 @@
   justify-content: center;
 }
 
+/* Calculator */
 .Calculator {
   border: 1px solid black;
   width: 400px;
@@ -12,28 +13,48 @@
   grid-template-rows: repeat(6, 1fr);
   grid-template-areas:
     "Display Display Display Display"
-    "ActionsHorizontal ActionsHorizontal ActionsHorizontal ActionsVertical"
+    "ActionsHorizontal ActionsHorizontal ActionsHorizontal ActionsHorizontal"
     "Numpad Numpad Numpad ActionsVertical"
     "Numpad Numpad Numpad ActionsVertical"
     "Numpad Numpad Numpad ActionsVertical"
     "Numpad Numpad Numpad ActionsVertical";
 }
 
+/* Display */
 .Display {
   grid-area: Display;
   border: 1px solid black;
 }
 
+/* Actions */
+.Action {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .ActionsHorizontal {
   grid-area: ActionsHorizontal;
-  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "AC AC Division Multiplication";
+}
+.Action__AC {
+  grid-area: AC;
+}
+.Action__Division {
+  grid-area: Division;
+}
+.Action__Multiplication {
+  grid-area: Multiplication;
 }
 
 .ActionsVertical {
   grid-area: ActionsVertical;
-  border: 1px solid black;
 }
 
+/* Numpad */
 .Numpad {
   grid-area: Numpad;
   border: 1px solid black;
