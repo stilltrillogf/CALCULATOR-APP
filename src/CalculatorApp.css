@@ -37,4 +37,65 @@
 .Numpad {
   grid-area: Numpad;
   border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "Number7 Number8 Number9"
+    "Number4 Number5 Number6"
+    "Number1 Number2 Number3"
+    "Zero Zero Decimal";
+}
+
+.Numpad__Number {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* REFACTOR */
+/* There must be cleaner way to do this */
+.Numpad__Number__1 {
+  grid-area: Number1;
+}
+.Numpad__Number__2 {
+  grid-area: Number2;
+}
+.Numpad__Number__3 {
+  grid-area: Number3;
+}
+.Numpad__Number__4 {
+  grid-area: Number4;
+}
+.Numpad__Number__5 {
+  grid-area: Number5;
+}
+.Numpad__Number__6 {
+  grid-area: Number6;
+}
+.Numpad__Number__7 {
+  grid-area: Number7;
+}
+.Numpad__Number__8 {
+  grid-area: Number8;
+}
+.Numpad__Number__9 {
+  grid-area: Number9;
+}
+
+.Numpad__Zero {
+  grid-area: Zero;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Numpad__Decimal {
+  grid-area: Decimal;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
