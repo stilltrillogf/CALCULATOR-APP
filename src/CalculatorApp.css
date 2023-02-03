@@ -1,0 +1,40 @@
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.Calculator {
+  border: 1px solid black;
+  width: 400px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "Display Display Display Display"
+    "ActionsHorizontal ActionsHorizontal ActionsHorizontal ActionsVertical"
+    "Numpad Numpad Numpad ActionsVertical"
+    "Numpad Numpad Numpad ActionsVertical"
+    "Numpad Numpad Numpad ActionsVertical"
+    "Numpad Numpad Numpad ActionsVertical";
+}
+
+.Display {
+  grid-area: Display;
+  border: 1px solid black;
+}
+
+.ActionsHorizontal {
+  grid-area: ActionsHorizontal;
+  border: 1px solid black;
+}
+
+.ActionsVertical {
+  grid-area: ActionsVertical;
+  border: 1px solid black;
+}
+
+.Numpad {
+  grid-area: Numpad;
+  border: 1px solid black;
+}
