@@ -1,4 +1,4 @@
-export default function Display({ operation, currentNumbers }) {
+export default function Display({ operation, currentNumbers, result }) {
   return (
     <div className="Display">
       <div className="Display__Operation">{operation}</div>
