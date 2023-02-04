@@ -37,14 +37,27 @@ function CalculatorApp() {
 
     // Action keys
     if (actionKeys.includes(key)) {
-      setOperation([...operation, key]);
-      setCurrentNumbers([key]);
+      // If last key of the operation array is an action key, replace it with current action key
+      if (actionKeys.includes(operation[operation.length - 1])) {
+        setOperation(
+          operation.map((keyEl, i, arr) => (i === arr.length - 1 ? key : keyEl))
+        );
+        setCurrentNumbers([key]);
+      } else {
+        setOperation([...operation, key]);
+        setCurrentNumbers([key]);
+      }
     }
 
     // AC key functionality
     if (key === "AC") {
       setOperation([]);
       setCurrentNumbers([]);
+    }
+
+    // EQUAL key functionality
+    if (key === "=") {
+      // eval the operation
     }
   };
 
