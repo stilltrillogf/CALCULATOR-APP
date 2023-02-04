@@ -1,31 +1,35 @@
-function Action({ type, tag = type }) {
-  return <div className={`Key Action Action__${type}`}>{tag}</div>;
+function Action({ type, tag = type, onClick }) {
+  return (
+    <div onClick={onClick} className={`Key Action Action__${type}`}>
+      {tag}
+    </div>
+  );
 }
 
-function ActionsHorizontal() {
+function ActionsHorizontal({ onClick }) {
   return (
     <div className="ActionsHorizontal">
-      <Action type="AC" />
-      <Action type="Division" tag="/" />
-      <Action type="Multiplication" tag="*" />
+      <Action onClick={onClick} type="AC" />
+      <Action onClick={onClick} type="Division" tag="/" />
+      <Action onClick={onClick} type="Multiplication" tag="*" />
     </div>
   );
 }
-function ActionsVertical() {
+function ActionsVertical({ onClick }) {
   return (
     <div className="ActionsVertical">
-      <Action type="Subtraction" tag="-" />
-      <Action type="Addition" tag="+" />
-      <Action type="Equals" tag="=" />
+      <Action onClick={onClick} type="Subtraction" tag="-" />
+      <Action onClick={onClick} type="Addition" tag="+" />
+      <Action onClick={onClick} type="Equals" tag="=" />
     </div>
   );
 }
 
-export default function Actions() {
+export default function Actions({ onClick }) {
   return (
     <>
-      <ActionsHorizontal />
-      <ActionsVertical />
+      <ActionsHorizontal onClick={onClick} />
+      <ActionsVertical onClick={onClick} />
     </>
   );
 }
