@@ -25,16 +25,6 @@ function CalculatorApp() {
     if (numpadKeys.includes(key)) {
       setOperation([...operation, key]);
       setCurrentNumbers([...currentNumbers, key]);
-
-      /* TODO Low priority : clearing actionKey from currentNumbers when adding a number on top of it
-
-      // Checking if currentNumbers includes action key
-      if (currentNumbers.some((key) => actionKeys.indexOf(key) >= 0)) {
-        // If it does, clear it from the currentNumbers
-        setCurrentNumbers([]);
-      } else {
-        console.log("Does not include an action key");
-      } */
     }
 
     // Action keys
@@ -64,6 +54,13 @@ function CalculatorApp() {
     if (key === "=") {
       // Calculate the operation result
       const result = eval(displayOperation).toString();
+
+      if (result === "Infinity") {
+        alert("Error");
+        setOperation([]);
+        setCurrentNumbers([]);
+        return;
+      }
 
       if (result === "0") {
         // reset
