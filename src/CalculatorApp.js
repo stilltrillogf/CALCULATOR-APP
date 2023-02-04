@@ -39,6 +39,9 @@ function CalculatorApp() {
 
     // Action keys
     if (actionKeys.includes(key)) {
+      // If operation array is empty, action keys do not work
+      if (operation.length === 0) return;
+
       // If last key of the operation array is an action key, replace it with current action key
       if (actionKeys.includes(operation[operation.length - 1])) {
         setOperation(
@@ -59,16 +62,18 @@ function CalculatorApp() {
 
     // EQUAL key functionality
     if (key === "=") {
-      // TODO: Check if operation is valid
-
       // Calculate the operation result
-      const result = eval(displayOperation);
+      const result = eval(displayOperation).toString();
 
-      // FIX: Edge case when calculation result is 0 behaves weirdly
-
-      // Display result instead of operation and current numbers
-      setOperation([result]);
-      setCurrentNumbers([result]);
+      if (result === "0") {
+        // reset
+        setOperation([]);
+        setCurrentNumbers([]);
+      } else {
+        // display result
+        setOperation([result]);
+        setCurrentNumbers([result]);
+      }
     }
   };
 
