@@ -163,4 +163,5 @@
 .Key:hover {
   color: black;
   border: 1px solid lightgrey;
+  cursor: default;
 }
