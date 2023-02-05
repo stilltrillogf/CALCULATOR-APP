@@ -1,5 +1,6 @@
 import "./CalculatorApp.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { HandleKeyClickContext } from "./Components/Context/HandleKeyClickContext";
 import Calculator from "./Components/Calculator";
 import Display from "./Components/Display";
 import Actions from "./Components/Actions";
@@ -76,14 +77,16 @@ function CalculatorApp() {
   };
 
   return (
-    <Calculator>
-      <Display
-        operation={displayOperation}
-        currentNumbers={displayCurrentNumbers}
-      />
-      <Actions onClick={handleKeyClick} />
-      <Numpad onClick={handleKeyClick} />
-    </Calculator>
+    <HandleKeyClickContext.Provider value={handleKeyClick}>
+      <Calculator>
+        <Display
+          operation={displayOperation}
+          currentNumbers={displayCurrentNumbers}
+        />
+        <Actions />
+        <Numpad />
+      </Calculator>
+    </HandleKeyClickContext.Provider>
   );
 }
 

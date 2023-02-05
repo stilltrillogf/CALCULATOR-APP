@@ -1,4 +1,8 @@
-function Action({ type, tag = type, onClick }) {
+import { useContext } from "react";
+import { HandleKeyClickContext } from "./Context/HandleKeyClickContext";
+
+function Action({ type, tag = type }) {
+  const onClick = useContext(HandleKeyClickContext);
   return (
     <div onClick={onClick} className={`Key Action Action__${type}`}>
       {tag}
@@ -6,30 +10,30 @@ function Action({ type, tag = type, onClick }) {
   );
 }
 
-function ActionsHorizontal({ onClick }) {
+function ActionsHorizontal() {
   return (
     <div className="ActionsHorizontal">
-      <Action onClick={onClick} type="AC" />
-      <Action onClick={onClick} type="Division" tag="/" />
-      <Action onClick={onClick} type="Multiplication" tag="*" />
+      <Action type="AC" />
+      <Action type="Division" tag="/" />
+      <Action type="Multiplication" tag="*" />
     </div>
   );
 }
-function ActionsVertical({ onClick }) {
+function ActionsVertical() {
   return (
     <div className="ActionsVertical">
-      <Action onClick={onClick} type="Subtraction" tag="-" />
-      <Action onClick={onClick} type="Addition" tag="+" />
-      <Action onClick={onClick} type="Equals" tag="=" />
+      <Action type="Subtraction" tag="-" />
+      <Action type="Addition" tag="+" />
+      <Action type="Equals" tag="=" />
     </div>
   );
 }
 
-export default function Actions({ onClick }) {
+export default function Actions() {
   return (
     <>
-      <ActionsHorizontal onClick={onClick} />
-      <ActionsVertical onClick={onClick} />
+      <ActionsHorizontal />
+      <ActionsVertical />
     </>
   );
 }
