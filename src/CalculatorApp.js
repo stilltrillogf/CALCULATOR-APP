@@ -54,8 +54,9 @@ function CalculatorApp() {
     if (key === "=") {
       // Calculate the operation result
       const result = eval(displayOperation).toString();
+      const validation = parseFloat(result);
 
-      if (result === "Infinity") {
+      if (result === "Infinity" || isNaN(validation)) {
         alert("Error");
         setOperation([]);
         setCurrentNumbers([]);
