@@ -1,5 +1,5 @@
 import "./CalculatorApp.css";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { HandleKeyClickContext } from "./Components/Context/HandleKeyClickContext";
 import Calculator from "./Components/Calculator";
 import Display from "./Components/Display";
@@ -54,6 +54,7 @@ function CalculatorApp() {
     // EQUAL key functionality
     if (key === "=") {
       // Calculate the operation result
+      // eslint-disable-next-line
       const result = eval(displayOperation).toString();
       const validation = parseFloat(result);
 
